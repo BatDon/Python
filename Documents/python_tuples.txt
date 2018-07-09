@@ -1,0 +1,31 @@
+import pickle
+
+class Ranking(object)
+
+'''ranking is a list of tuples: ranking, name, year'''
+
+	def __init__(self, name='',year='1'):
+		self.ranking_dict={}
+		self.person_name=name
+		self.year=year
+
+	def add_name(self, name):
+		self.ranking_dict[name]=[]
+
+	def add_ranking(self,name,ranking):
+		try:
+			self.ranking_dict[name].append(ranking)
+		except KeyError:
+			print("Name doesn't work as a string")
+
+	def __str__(self):
+	'''print the names in alphabetic order'''
+		ranking_list=list(self.ranking_dict.items())
+		ranking_list.sort()
+		results_str=''
+		results_str += 'Team:'+self.person_name+', Semester:'+self.year+'\n'
+		for team_member in ranking_list:
+			results_str+='Team Member:{:12}, Ranking:{}\n'.format(person_name[0],person_name[1])
+		return results_str
+		
+	
